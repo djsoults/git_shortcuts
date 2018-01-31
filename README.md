@@ -8,4 +8,4 @@ Note: This script is compatible with Mac and Linux systems only. For Windows sys
 
 ### Instructions:
 To add all commands listed in the Git documentation (linked above) run this command from a terminal:
-`curl -s URL | bash -s`
+`curl -s https://raw.githubusercontent.com/djsoults/git_shortcuts/master/git_tips.sh | bash -s`
