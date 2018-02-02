@@ -1,8 +1,15 @@
 # /bin/bash
 
 # Add Git Completion
-curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-source ~/.git-completion.bash
+if [ ! -f ~/.bashrc ]; then
+  touch ~/.bashrc
+fi
+
+if ! grep -q "source ~/.git-completion.bash" ~/.bashrc; then
+  curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+  echo -e "\n" >> ~/.bashrc
+  echo "source ~/.git-completion.bash" >> ~/.bashrc
+fi
 
 # Add Global Git aliases
 git config --global alias.co checkout
